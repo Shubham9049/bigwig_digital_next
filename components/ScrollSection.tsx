@@ -139,20 +139,20 @@ const ScrollSections: React.FC = () => {
           <div className="mt-2 inline-flex items-center justify-center italic font-semibold py-1 rounded-full text-white text-sm">
             Balancing Your Brand's Mission and Social Media Presence
           </div>
-          <p className="mt-4 text-lg leading-relaxed text-justify text-white">
+          <p>
             Social media is like a party, and your brand needs to be the life of
-            it,not the awkward one in the corner...
+            it, not the awkward one in the corner...
           </p>
         </>
       ),
       image: "/social2.mp4",
       icons: [
-        <FaFacebook className="text-blue-600 text-4xl" />,
-        <FaInstagram className="text-pink-500 text-4xl" />,
-        <FaTwitter className="text-blue-600 text-4xl" />,
-        <FaYoutube className="text-red-700 text-4xl" />,
-        <FaLinkedin className="text-blue-700 text-4xl" />,
-        <FaGoogle className="text-red-700 text-4xl" />,
+        <FaFacebook key="facebook" className="text-blue-600 text-4xl" />,
+        <FaInstagram key="instagram" className="text-pink-500 text-4xl" />,
+        <FaTwitter key="twitter" className="text-blue-600 text-4xl" />,
+        <FaYoutube key="youtube" className="text-red-700 text-4xl" />,
+        <FaLinkedin key="Linkedin" className="text-blue-700 text-4xl" />,
+        <FaGoogle key="google" className="text-red-700 text-4xl" />,
       ],
     },
 

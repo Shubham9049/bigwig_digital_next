@@ -15,6 +15,7 @@ interface BlogPost {
   tags?: string;
   coverImage?: string;
   category: string;
+  schemaMarkup?: string[]; // add this
 }
 
 const categoryOptions = [
@@ -70,10 +71,9 @@ const AddBlog = ({
         tags: existingBlog.tags || "",
         coverImage: null,
         category: existingBlog.category || "",
-        schemaMarkup:
-          (existingBlog as any).schemaMarkup?.length > 0
-            ? (existingBlog as any).schemaMarkup
-            : [""],
+        schemaMarkup: existingBlog.schemaMarkup?.length
+          ? existingBlog.schemaMarkup
+          : [""],
       });
     }
   }, [existingBlog]);

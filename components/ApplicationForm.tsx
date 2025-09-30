@@ -1,6 +1,27 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+type FormDataType = {
+  fullName: string;
+  email: string;
+  mobileNumber: string;
+  experience: string;
+  cctc: string;
+  ectc: string;
+  noticePeriod: string;
+  coverLetter: string;
+};
+
+const [formData, setFormData] = useState<FormDataType>({
+  fullName: "",
+  email: "",
+  mobileNumber: "",
+  experience: "",
+  cctc: "",
+  ectc: "",
+  noticePeriod: "",
+  coverLetter: "",
+});
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -39,9 +60,10 @@ const ApplicationForm = () => {
     }
 
     const data = new FormData();
-    for (const key in formData) {
-      data.append(key, (formData as any)[key]);
+    for (const key of Object.keys(formData) as (keyof FormDataType)[]) {
+      data.append(key, formData[key]);
     }
+
     data.append("resume", resume);
 
     try {
@@ -70,7 +92,7 @@ const ApplicationForm = () => {
         coverLetter: "",
       });
       setResume(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       setMessage("Failed to submit application.");
     } finally {

@@ -4,9 +4,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { CustomArrowProps } from "react-slick";
 
 // Custom Arrow Components
-const NextArrow = (props: any) => {
+const NextArrow = (props: CustomArrowProps) => {
   const { onClick } = props;
   return (
     <div
@@ -18,7 +19,7 @@ const NextArrow = (props: any) => {
   );
 };
 
-const PrevArrow = (props: any) => {
+const PrevArrow = (props: CustomArrowProps) => {
   const { onClick } = props;
   return (
     <div
@@ -43,7 +44,7 @@ export default function ImageSlider() {
     {
       name: "Fatima Al Sayegh",
       review:
-        "Riverfront helped me find my dream home in Dubai, and I couldn't be happier with the service I received...",
+        "Riverfront helped me find my dream home in Dubai, and I couldnt be happier with the service I received...",
       rating: 5,
       image:
         "https://t3.ftcdn.net/jpg/11/78/73/70/360_F_1178737095_LwMHsASBgW6xP8q58hjc6rH20gC2t4lg.jpg",
@@ -51,7 +52,7 @@ export default function ImageSlider() {
     {
       name: "Khalid Al Mansoori",
       review:
-        "I've invested in several properties in Dubai, but my experience with Riverfront has been exceptional...",
+        "I have invested in several properties in Dubai, but my experience with Riverfront has been exceptional...",
       rating: 5,
       image:
         "https://images.squarespace-cdn.com/content/v1/5c5a48b7809d8e364b16c2bf/1596588103144-YDOUWGJ09KUD4SMJJD6A/company+profile+picture.jpg",
@@ -150,8 +151,8 @@ export default function ImageSlider() {
             </div>
           </div>
           <p className="text-gray-400 mt-4">
-            Don't just take our word for it. Here's what our clients have to say
-            about their Unique experience.
+            Don&#39;t just take our word for it. Here&#39;s what our clients
+            have to say about their Unique experience.
           </p>
         </div>
 

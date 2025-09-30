@@ -62,9 +62,14 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
       );
       setStatusMessage("✅ OTP sent! Please check your email.");
       setStep("otp");
-    } catch (err: any) {
-      if (err.response?.status === 400) {
-        setStatusMessage(err.response.data.message || "Email already used.");
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        // err is AxiosError
+        if (err.response?.status === 400) {
+          setStatusMessage(err.response.data?.message || "Email already used.");
+        } else {
+          setStatusMessage("❌ Something went wrong. Try again later.");
+        }
       } else {
         setStatusMessage("❌ Something went wrong. Try again later.");
       }
@@ -88,8 +93,12 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
       );
       setStatusMessage("🎉 Lead saved successfully!");
       setTimeout(handleClose, 2000);
-    } catch (err: any) {
-      setStatusMessage(err.response?.data?.message || "❌ Invalid OTP.");
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        setStatusMessage(err.response?.data?.message || "❌ Invalid OTP.");
+      } else {
+        setStatusMessage("❌ Invalid OTP.");
+      }
     } finally {
       setLoading(false);
     }

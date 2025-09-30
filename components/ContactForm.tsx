@@ -32,11 +32,15 @@ const ContactForm = () => {
         formData
       );
       setStep("otp");
-    } catch (err: any) {
-      if (err.response && err.response.status === 400) {
-        setError(
-          "This email is already registered. Please use a different one."
-        );
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 400) {
+          setError(
+            "This email is already registered. Please use a different one."
+          );
+        } else {
+          setError("Failed to send OTP. Please try again.");
+        }
       } else {
         setError("Failed to send OTP. Please try again.");
       }
@@ -59,7 +63,7 @@ const ContactForm = () => {
         }
       );
       setStep("done");
-    } catch (err) {
+    } catch (err: unknown) {
       setError("Invalid OTP. Please try again.");
     } finally {
       setLoading(false);
