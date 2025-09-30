@@ -12,19 +12,8 @@ type FormDataType = {
   coverLetter: string;
 };
 
-const [formData, setFormData] = useState<FormDataType>({
-  fullName: "",
-  email: "",
-  mobileNumber: "",
-  experience: "",
-  cctc: "",
-  ectc: "",
-  noticePeriod: "",
-  coverLetter: "",
-});
-
 const ApplicationForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataType>({
     fullName: "",
     email: "",
     mobileNumber: "",

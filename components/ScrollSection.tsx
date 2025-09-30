@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-// import google_ad from "../assets/services/Google-My-Business.mp4";
 import {
   FaFacebook,
   FaInstagram,
@@ -21,7 +20,7 @@ import {
   FaLaptopCode,
   FaLinkedin,
   FaYahoo,
-} from "react-icons/fa"; // Example icons
+} from "react-icons/fa";
 import { MdSearch } from "react-icons/md";
 
 type Section = {
@@ -45,6 +44,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   const [ref, inView] = useInView({
     threshold: 0.2,
   });
+
   const isVideo = (src: string) => {
     return (
       src.endsWith(".mp4") || src.endsWith(".webm") || src.endsWith(".ogg")
@@ -58,7 +58,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`w-full overflow-x-hidden px-5`}
+      className="w-full overflow-x-hidden px-5"
     >
       <div
         className={`flex flex-col md:flex-row gap-8 md:gap-16 w-full max-w-[1440px] mx-auto mb-12 rounded-xl h-fit border border-gray-700 ${
@@ -137,9 +137,9 @@ const ScrollSections: React.FC = () => {
             Social Media Management
           </h1>
           <div className="mt-2 inline-flex items-center justify-center italic font-semibold py-1 rounded-full text-white text-sm">
-            Balancing Your Brand's Mission and Social Media Presence
+            Balancing Your Brand&apos;s Mission and Social Media Presence
           </div>
-          <p>
+          <p className="mt-4 text-lg text-white leading-relaxed text-justify">
             Social media is like a party, and your brand needs to be the life of
             it, not the awkward one in the corner...
           </p>
@@ -151,11 +151,10 @@ const ScrollSections: React.FC = () => {
         <FaInstagram key="instagram" className="text-pink-500 text-4xl" />,
         <FaTwitter key="twitter" className="text-blue-600 text-4xl" />,
         <FaYoutube key="youtube" className="text-red-700 text-4xl" />,
-        <FaLinkedin key="Linkedin" className="text-blue-700 text-4xl" />,
+        <FaLinkedin key="linkedin" className="text-blue-700 text-4xl" />,
         <FaGoogle key="google" className="text-red-700 text-4xl" />,
       ],
     },
-
     {
       id: 2,
       title: "search-engine-optimization",
@@ -169,20 +168,20 @@ const ScrollSections: React.FC = () => {
             Boosting Your Online Visibility to Help Your Brand Shine
           </div>
           <p className="mt-4 text-white text-lg leading-relaxed text-justify">
-            Think of us as your brand’s personal trainer, but for search
-            engines. We’ll whip your online presence into shape, get you
-            climbing those rankings, and have your audience saying, ‘How did we
-            not see this sooner?’
+            Think of us as your brand&rsquo;s personal trainer, but for search
+            engines. We&apos;ll whip your online presence into shape, get you
+            climbing those rankings, and have your audience saying, &lsquo;How
+            did we not see this sooner?&rsquo;
           </p>
         </>
       ),
       image: "/seo1.mp4",
       icons: [
-        <MdSearch className="text-green-600 text-4xl" />,
-        <FaGoogle className="text-red-500 text-4xl" />,
-        <FaChartLine className="text-blue-700 text-4xl" />,
-        <FaTags className="text-yellow-500 text-4xl" />,
-        <FaYahoo className="text-purple-700 text-4xl" />,
+        <MdSearch key="search" className="text-green-600 text-4xl" />,
+        <FaGoogle key="google" className="text-red-500 text-4xl" />,
+        <FaChartLine key="chart" className="text-blue-700 text-4xl" />,
+        <FaTags key="tags" className="text-yellow-500 text-4xl" />,
+        <FaYahoo key="yahoo" className="text-purple-700 text-4xl" />,
       ],
     },
     {
@@ -198,22 +197,23 @@ const ScrollSections: React.FC = () => {
             Marketing Strategies That Help You Stay Ahead of the Competition
           </div>
           <p className="mt-4 text-lg text-white leading-relaxed text-justify">
-            Marketing is a race, and we’re here to make sure you’re not the one
-            tripping over your shoelaces. Our data-driven approach will keep you
-            ahead of the pack, converting browsers into buyers faster than you
-            can say ‘ROI’ on Google Adwords, Instagram Ads, Facebook Ads,
-            LinkedIn Ads, Botim Ads, Youtube Ads etc.
+            Marketing is a race, and we&rsquo;re here to make sure you&rsquo;re
+            not the one tripping over your shoelaces. Our data-driven approach
+            will keep you ahead of the pack, converting browsers into buyers
+            faster than you can say &lsquo;ROI&rsquo; on Google Adwords,
+            Instagram Ads, Facebook Ads, LinkedIn Ads, Botim Ads, YouTube Ads,
+            etc.
           </p>
         </>
       ),
       image: "/Performance Marketing-1.mp4",
       icons: [
-        <FaGoogle className="text-red-500 text-4xl" />,
-        <FaChartLine className="text-blue-700 text-4xl" />,
-        <FaYoutube className="text-red-700 text-4xl" />,
-        <FaLinkedin className="text-blue-700 text-4xl" />,
-        <FaFacebook className="text-blue-600 text-4xl" />,
-        <FaInstagram className="text-pink-500 text-4xl" />,
+        <FaGoogle key="google" className="text-red-500 text-4xl" />,
+        <FaChartLine key="chart" className="text-blue-700 text-4xl" />,
+        <FaYoutube key="youtube" className="text-red-700 text-4xl" />,
+        <FaLinkedin key="linkedin" className="text-blue-700 text-4xl" />,
+        <FaFacebook key="facebook" className="text-blue-600 text-4xl" />,
+        <FaInstagram key="instagram" className="text-pink-500 text-4xl" />,
       ],
     },
     {
@@ -226,21 +226,21 @@ const ScrollSections: React.FC = () => {
             Online Reputation Management
           </h1>
           <div className="mt-2 inline-flex items-center justify-center py-1 rounded-full italic font-semibold text-white text-sm">
-            Building and Protecting Your Brand’s Online Reputation
+            Building and Protecting Your Brand&rsquo;s Online Reputation
           </div>
           <p className="mt-4 text-white text-lg leading-relaxed text-justify">
-            The internet never forgets, but don’t worry,we’ve got your back.
-            With us on your team, your brand will look so good online that even
-            your competitors might want to leave a five-star review!
+            The internet never forgets, but don&apos;t worry, we&apos;ve got
+            your back. With us on your team, your brand will look so good online
+            that even your competitors might want to leave a five-star review!
           </p>
         </>
       ),
       image: "/ORM.mp4",
       icons: [
-        <FaShieldAlt className="text-blue-500 text-4xl" />,
-        <FaStar className="text-yellow-500 text-4xl" />,
-        <FaCommentDots className="text-green-500 text-4xl" />,
-        <FaGlobe className="text-gray-600 text-4xl" />,
+        <FaShieldAlt key="shield" className="text-blue-500 text-4xl" />,
+        <FaStar key="star" className="text-yellow-500 text-4xl" />,
+        <FaCommentDots key="comment" className="text-green-500 text-4xl" />,
+        <FaGlobe key="globe" className="text-gray-600 text-4xl" />,
       ],
     },
     {
@@ -257,54 +257,27 @@ const ScrollSections: React.FC = () => {
           </div>
           <p className="mt-4 text-lg text-white leading-relaxed text-justify">
             From pixel-perfect responsive websites to feature-rich mobile apps
-            on Android & IOS, we bring your ideas to life with designs that
+            on Android &amp; IOS, we bring your ideas to life with designs that
             inspire and functionality that delivers. Let us help you create a
-            digital presence that's as sleek as it is user-friendly, ensuring
-            your audience stays engaged and your brand stands out.
+            digital presence that&apos;s as sleek as it is user-friendly,
+            ensuring your audience stays engaged and your brand stands out.
           </p>
         </>
       ),
       image: "/web-develop.mp4",
       icons: [
-        <FaPalette className="text-pink-500 text-4xl" />,
-        <FaCode className="text-blue-500 text-4xl" />,
-        <FaMobileAlt className="text-green-500 text-4xl" />,
-        <FaLaptopCode className="text-gray-600 text-4xl" />,
+        <FaPalette key="palette" className="text-pink-500 text-4xl" />,
+        <FaCode key="code" className="text-blue-500 text-4xl" />,
+        <FaMobileAlt key="mobile" className="text-green-500 text-4xl" />,
+        <FaLaptopCode key="laptop" className="text-gray-600 text-4xl" />,
       ],
     },
-    // {
-    //   id: 6,
-    //   title: "google-my-business",
-    //   backgroundColor: "bg-neutral-950",
-    //   content: (
-    //     <>
-    //       <h1 className="text-4xl font-bold text-white">Google My Business</h1>
-    //       <div className="mt-2 inline-flex items-center justify-center py-1 rounded-full italic font-semibold text-white text-sm">
-    //         Elevate Your Local Presence with GMB
-    //       </div>
-    //       <p className="mt-4 text-lg text-white leading-relaxed text-justify">
-    //         Get your business locally & vocally noticed on Google search and
-    //         maps! With a strategic Google My Business profile, we'll help you
-    //         attract more local customers, build credibility, and keep your
-    //         audience engaged. From setup to optimization, we’ll ensure your
-    //         business shines brightly in your neighborhood and beyond.
-    //       </p>
-    //     </>
-    //   ),
-    //   image: google_ad,
-    //   icons: [
-    //     <FaGoogle className="text-red-500 text-4xl" />,
-    //     <FaMapMarkerAlt className="text-green-600 text-4xl" />,
-    //     <FaBuilding className="text-blue-500 text-4xl" />,
-    //     <FaStar className="text-yellow-400 text-4xl" />,
-    //   ],
-    // },
   ];
 
   return (
     <div>
       <h2 className="text-5xl font-bold text-white text-center my-8">
-        Our Services       
+        Our Services
       </h2>
       {sections.map((section, index) => (
         <AnimatedSection
