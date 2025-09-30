@@ -1,16 +1,20 @@
-import AboutUs from "../../components/About";
+import dynamic from "next/dynamic";
+
+const AboutUs = dynamic(() => import("../../components/About"), { ssr: false });
 import Blogs from "../../components/Blog";
 import CaseCard from "../../components/CaseCard";
 import Client from "../../components/Clients";
 import FlipCard from "../../components/FlipCard";
 import Hero from "../../components/Hero";
-import HowWeWork from "../../components/HowWeWork";
+const HowWeWork = dynamic(() => import("../../components/HowWeWork"), {
+  ssr: false,
+});
 import ImageSlider from "../../components/ImageSlider";
 import Nav from "../../components/Nav";
 import Partners from "../../components/Partners";
 import ScrollOverlappingText from "../../components/ScrollSection";
 import Stats from "../../components/Stats";
-import FAQ from "../../components/Faq";
+const FAQ = dynamic(() => import("../../components/Faq"), { ssr: false });
 import LocationsSection from "../../components/Location";
 import Footer from "../../components/Footer";
 
