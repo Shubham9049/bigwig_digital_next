@@ -23,21 +23,22 @@ function About() {
             Based in New Delhi, India, we are a thriving digital media agency.
             Experienced and diligent social bees who live and breathe digital
             make up our team. Algorithm changes on Google, YouTube, Instagram,
-            Facebook, and Twitter? Don't worry,, we know about it as soon as
-            it's released. We provide a rich digital experience for our clients
-            by fusing our years of experience in developing integrated social
-            solutions with creative output. We believe that we conduct research,
-            produce, and strive to provide our clients with the best solutions
-            for all of their issues. The goal of Bigwig Media Digital, a 360°
-            digital marketing firm, is to turn brands into market leaders. With
-            more than eight years of expertise, we have continuously assisted
-            companies in expanding, interacting with customers, and maintaining
-            their competitive edge in the digital market. Our team produces
-            quantifiable outcomes that stimulate growth, engage audiences, and
-            return on investment, regardless of whether you're a startup trying
-            to make an impression or an established company hoping to grow.
-            Bigwig creates digital experiences that engage, convert, and have an
-            impact we Don't just market.
+            Facebook, and Twitter? Don&#39;t worry,, we know about it as soon as
+            it&#39;s released. We provide a rich digital experience for our
+            clients by fusing our years of experience in developing integrated
+            social solutions with creative output. We believe that we conduct
+            research, produce, and strive to provide our clients with the best
+            solutions for all of their issues. The goal of Bigwig Media Digital,
+            a 360° digital marketing firm, is to turn brands into market
+            leaders. With more than eight years of expertise, we have
+            continuously assisted companies in expanding, interacting with
+            customers, and maintaining their competitive edge in the digital
+            market. Our team produces quantifiable outcomes that stimulate
+            growth, engage audiences, and return on investment, regardless of
+            whether you&#39;re a startup trying to make an impression or an
+            established company hoping to grow. Bigwig creates digital
+            experiences that engage, convert, and have an impact we Don&#39;t
+            just market.
           </p>
         </section>
 
@@ -93,7 +94,7 @@ function About() {
             and convert in the digital world. From SEO and social media to paid
             ads, content creation, and web strategy we craft data-driven
             campaigns and strategies that deliver real, live results. Whether
-            you're building your brand or boosting sales, we deliver smart
+            you&#39;re building your brand or boosting sales, we deliver smart
             digital solutions tailored to your goals. We are hungry for
             creativity and passionate about driving results. Our clients below
             can attest to our efforts!

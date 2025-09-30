@@ -57,9 +57,9 @@ export default function TermsOfUse() {
               </li>
               <li>
                 <strong>No Warranties:</strong> All content and services are
-                provided "as is" without any warranties, express or implied.
-                Bigwig Media Digital makes no guarantees regarding the accuracy,
-                reliability, or completeness of the content.
+                provided &#34;as is&#34; without any warranties, express or
+                implied. Bigwig Media Digital makes no guarantees regarding the
+                accuracy, reliability, or completeness of the content.
               </li>
               <li>
                 <strong>Limitation of Liability:</strong> Bigwig Media Digital
@@ -121,9 +121,9 @@ export default function TermsOfUse() {
               </li>
               <li>
                 <strong>Confidentiality and Non-Solicitation: </strong> Both
-                parties agree not to solicit or hire each other's employees for
-                24 months after project completion. Confidentiality of shared
-                information must be maintained.
+                parties agree not to solicit or hire each other&#39;s employees
+                for 24 months after project completion. Confidentiality of
+                shared information must be maintained.
               </li>
               <li>
                 <strong>Governing Law: </strong> This agreement is governed by

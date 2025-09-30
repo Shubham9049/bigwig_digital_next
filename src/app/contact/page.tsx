@@ -7,6 +7,7 @@ import { Mail, MessageSquareText, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
+import { AxiosError } from "axios";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -53,9 +54,10 @@ export default function ContactPage() {
       );
       setStep("otp");
       setStatusMessage("OTP sent! Please check your email.");
-    } catch (err: any) {
-      if (err.response?.status === 400) {
-        setStatusMessage(err.response.data.message || "Email already used.");
+    } catch (err) {
+      const error = err as AxiosError<{ message?: string }>;
+      if (error.response?.status === 400) {
+        setStatusMessage(error.response.data?.message || "Email already used.");
       } else {
         setStatusMessage("Something went wrong. Try again later.");
       }
@@ -77,15 +79,16 @@ export default function ContactPage() {
           otp,
         }
       );
-      setShowSuccessPopup(true); // <-- Show success popup
+      setShowSuccessPopup(true);
       setFormData({ fullName: "", email: "", phone: "", message: "" });
       setOtp("");
       setTimeout(() => {
         setStep("form");
         setStatusMessage("");
       }, 3000);
-    } catch (err: any) {
-      setStatusMessage(err.response?.data?.message || "Invalid OTP.");
+    } catch (err) {
+      const error = err as AxiosError<{ message?: string }>;
+      setStatusMessage(error.response?.data?.message || "Invalid OTP.");
     } finally {
       setLoading(false);
     }
