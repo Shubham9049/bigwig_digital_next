@@ -9,7 +9,6 @@ import Rocket from "../Assets/method/rocket-svgrepo-com.svg";
 import analysis from "../Assets/method/analysis-analytics-chart-2-svgrepo-com.svg";
 import support from "../Assets/method/support-online-center-svgrepo-com.svg";
 import { ArrowLeft, ArrowRight } from "lucide-react"; // Better arrow icons
-import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 const workFlowData = [
@@ -73,21 +72,23 @@ const workFlowData = [
 
 export default function HowWeWork() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [active, setActive] = useState(workFlowData[0].id); // Add missing desktop state
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [active, setActive] = useState(workFlowData[0].id); // Desktop state
+
   useEffect(() => {
-    if (location.hash) {
-      const sectionId = location.hash.replace("#", "");
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const offset = 120;
-        const sectionTop =
-          section.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: sectionTop, behavior: "smooth" });
-      }
+    if (typeof window !== "undefined" && window.location.hash) {
+      // Delay to ensure DOM is rendered
+      setTimeout(() => {
+        const sectionId = window.location.hash.replace("#", "");
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offset = 120;
+          const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: sectionTop, behavior: "smooth" });
+        }
+      }, 100);
     }
-  }, [pathname, searchParams]);
+  }, []); // Removed Next.js hooks
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev > 0 ? prev - 1 : workFlowData.length - 1));
@@ -103,11 +104,9 @@ export default function HowWeWork() {
         Method to Madness
       </h2>
 
-      {/* Mobile View - Show 1 card with arrows */}
+      {/* Mobile View */}
       <div className="md:hidden relative w-full max-w-sm mx-auto rounded-xl overflow-hidden shadow-lg border border-gray-700">
-        {/* Top Half - Red Background */}
         <div className="relative bg-[#D20E0E] flex justify-center items-center h-40">
-          {/* Arrows in top half */}
           <div className="absolute w-full top-1/2 -translate-y-1/2 flex justify-between px-4">
             <button
               onClick={handlePrev}
@@ -122,16 +121,12 @@ export default function HowWeWork() {
               <ArrowRight size={20} />
             </button>
           </div>
-
-          {/* Image in center */}
           <Image
             src={workFlowData[activeIndex].image}
             alt={workFlowData[activeIndex].title}
             className="w-14 h-14 z-10"
           />
         </div>
-
-        {/* Bottom Half - Content Area */}
         <div className="bg-[#1f1f1f] p-6 text-center">
           <h3 className="text-lg font-semibold mb-2">
             {workFlowData[activeIndex].title}
@@ -164,7 +159,6 @@ export default function HowWeWork() {
             </div>
           ))}
         </div>
-
         <div className="mt-8 w-11/12 mx-auto bg-[#1f1f1f] border border-gray-700 p-6 rounded-xl shadow-lg">
           {workFlowData
             .filter((item) => item.id === active)

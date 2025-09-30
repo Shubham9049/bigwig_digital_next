@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import faq_img from "../Assets/faq-img.png";
-import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 type Faq = {
@@ -55,23 +54,22 @@ const faqs: Faq[] = [
 
 const ToggleFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+
   useEffect(() => {
-    if (location.hash) {
-      // Delay to ensure DOM is rendered
+    if (typeof window !== "undefined" && window.location.hash) {
+      // Delay to ensure DOM is mounted
       setTimeout(() => {
-        const id = location.hash.replace("#", "");
+        const id = window.location.hash.replace("#", "");
         const el = document.getElementById(id);
         if (el) {
           const offset = 80;
           const sectionTop =
             el.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: sectionTop, behavior: "auto" });
+          window.scrollTo({ top: sectionTop, behavior: "smooth" });
         }
-      }, 100); // delay ensures it's mounted
+      }, 100);
     }
-  }, [pathname, searchParams]);
+  }, []); // no Next.js hooks needed
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -82,8 +80,8 @@ const ToggleFAQ = () => {
       <h2 className="text-5xl font-bold text-center mb-2 text-white">
         Frequently Asked Questions
       </h2>
-      <div className="flex flex-col md:flex-row justify-evenly  py-3 items-start ">
-        <div className="md:flex items-start hidden  ">
+      <div className="flex flex-col md:flex-row justify-evenly py-3 items-start">
+        <div className="md:flex items-start hidden">
           <Image
             src={faq_img}
             alt="FAQ Illustration"
@@ -91,12 +89,10 @@ const ToggleFAQ = () => {
             draggable="false"
           />
         </div>
-        <div className="space-y-5 pt-10  ">
+        <div className="space-y-5 pt-10">
           {faqs.map((faq, index) => (
             <div key={index} className="relative">
-              {/* FAQ Box */}
               <div className="bg-gray-50 border text-gray-900 border-gray-700 rounded-lg pl-12 pr-6 py-3 relative max-w-xl w-full">
-                {/* Number Badge (half-overlapping from left) */}
                 <div className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold border-2 border-orange-500">
                   {index + 1}
                 </div>
@@ -112,6 +108,7 @@ const ToggleFAQ = () => {
                     }`}
                   />
                 </button>
+
                 {openIndex === index && (
                   <div className="pt-2 text-gray-700 transition-all duration-300 ease-in-out">
                     {faq.answer}

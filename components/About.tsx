@@ -3,37 +3,39 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { usePathname, useSearchParams } from "next/navigation";
 
 const rotatingWords = ["Trendsetters", "Innovative", "Unique", "Dynamic"];
 
 const AboutUs = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [mobileIndex, setMobileIndex] = useState(0);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+
+  // Use window.location inside useEffect instead of Next hooks
   useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const sectionId = window.location.hash.replace("#", "");
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const offset = 120;
-        const sectionTop =
-          section.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: sectionTop, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash) {
+        const sectionId = hash.replace("#", "");
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offset = 120;
+          const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: sectionTop, behavior: "smooth" });
+        }
       }
     }
-  }, [pathname, searchParams]);
+  }, []); // no dependencies on Next hooks
 
   useEffect(() => {
     AOS.init({
-      duration: 1200, // 👈 slow animation (you can adjust between 1000–1500 for even slower)
-      once: false, // 👈 animate every time it scrolls into view
-      mirror: false, // 👈 don't animate again when scrolling back up (optional)
-      easing: "ease-in-out", // 👈 smoother slow animation
+      duration: 1200,
+      once: false,
+      mirror: false,
+      easing: "ease-in-out",
     });
 
-    AOS.refresh(); // Ensures animations re-initialize correctly
+    AOS.refresh();
   }, []);
 
   useEffect(() => {
@@ -47,12 +49,12 @@ const AboutUs = () => {
     {
       title: "Driven by Innovation and Fueled by Passion",
       content:
-        "We’re like rocket fuel for your brand,minus the explosion. With powerful storytelling and creative spark, we help your business soar. It’s no wonder we’re trusted as one of the best digital marketing agencies in Dubai, India, Australia, New Zealand.",
+        "We’re like rocket fuel for your brand, minus the explosion. With powerful storytelling and creative spark, we help your business soar. It’s no wonder we’re trusted as one of the best digital marketing agencies in Dubai, India, Australia, New Zealand.",
     },
     {
       title: "Strong Communication is the Foundation of Success.",
       content:
-        "We believe clear communication is the backbone of every great partnership. That’s why we keep things transparent,sharing updates, hitting deadlines, and keeping you in the loop at every step. No last-minute surprises,just smooth progress, solid results, and the frequent virtual high-five!",
+        "We believe clear communication is the backbone of every great partnership. That’s why we keep things transparent, sharing updates, hitting deadlines, and keeping you in the loop at every step. No last-minute surprises, just smooth progress, solid results, and the frequent virtual high-five!",
     },
     {
       title: "Higher Return on Investment",
@@ -62,7 +64,7 @@ const AboutUs = () => {
     {
       title: "One Stop Shop - All Services in One Place",
       content:
-        "From building your website to putting it on the digital map,we’ve got it all covered. As a leading digital marketing agency in India, Dubai & Australasia, we offer end-to-end services including web development, CMS, e-commerce, mobile apps, SEO, SEM, and SMO. One team, all the tools you need.",
+        "From building your website to putting it on the digital map, we’ve got it all covered. As a leading digital marketing agency in India, Dubai & Australasia, we offer end-to-end services including web development, CMS, e-commerce, mobile apps, SEO, SEM, and SMO. One team, all the tools you need.",
     },
   ];
 
@@ -74,9 +76,8 @@ const AboutUs = () => {
       <h1 className="text-5xl text-center py-4 font-bold leading-tight mb-7">
         About Us
       </h1>
-      {/* Heading and Description */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 items-start">
-        {/* Left Side - Heading */}
         <div className="text-left">
           <h2 className="text-4xl md:text-5xl font-bold leading-tight pb-5">
             What Makes us{" "}
@@ -86,25 +87,21 @@ const AboutUs = () => {
           </h2>
         </div>
 
-        {/* Right Side - Paragraph */}
         <div
           className="text-gray-300 text-lg text-justify leading-relaxed"
           data-aos="zoom-in"
         >
           In a fast-changing digital world, first impressions are everything. As
           a top digital marketing agency in India, we blend creativity with
-          strategy,crafting stunning websites while using SEO, Google Ads, and
+          strategy, crafting stunning websites while using SEO, Google Ads, and
           Facebook Marketing to boost both perception and conversions. Here’s
           why working with us maximizes your ROI:
         </div>
       </div>
 
-      {/* Cards */}
       <div className="mt-0 md:mt-14">
-        {/* Mobile View - Horizontal Scroll with One Card at a Time */}
         <div className="block md:hidden relative">
           <div className="flex justify-center items-center mb-4">
-            {/* Arrows Above */}
             <div className="absolute top-1/2 left-0 right-0 flex justify-between z-10">
               <button
                 onClick={() =>
@@ -127,7 +124,6 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* Display the current card with both title and content */}
           <div
             className="bg-[#28282B] border border-gray-700 rounded-xl shadow-md p-3 w-[85%] mx-auto mt-12"
             data-aos="zoom-in"
@@ -142,7 +138,6 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Desktop View - Grid */}
         <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8">
           {cards.map((card, i) => (
             <div
