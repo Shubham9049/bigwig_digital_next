@@ -146,8 +146,9 @@ function Website() {
               <p>
                 Words like <strong>“web design”</strong> and{" "}
                 <strong>“web development”</strong> might sound overwhelming, and
-                that’s completely okay! Not everyone is an expert in creating
-                professional websites , that’s where BigWig Digital steps in.
+                that&#39;s completely okay! Not everyone is an expert in
+                creating professional websites , that&#39;s where BigWig Digital
+                steps in.
               </p>
               <p>
                 <strong>
@@ -156,8 +157,8 @@ function Website() {
                 is your trusted partner for web design and development. With a
                 strong track record and a results-oriented approach, we help
                 businesses establish a powerful online presence. Backed by years
-                of hands-on experience, we’ve earned recognition as one of the
-                leading web design and development companies.
+                of hands-on experience, we&#39;ve earned recognition as one of
+                the leading web design and development companies.
               </p>
             </div>
 
@@ -250,7 +251,7 @@ function Website() {
       <section className="bg-white text-black  py-12 px-4">
         <div className="w-11/12 md:w-5/6 mx-auto md:text-center text-justify">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6 leading-tight text-[var(--primary-color)] text-center">
-            Let's Build Your Digital Future Together
+            Let&#39;s Build Your Digital Future Together
           </h2>
           <p className="text-lg md:text-xl mb-6 max-w-3xl mx-auto">
             Looking for a website development company that understands your
