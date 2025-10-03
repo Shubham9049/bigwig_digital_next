@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill-new";
-import "react-quill/dist/quill.snow.css";
+import "react-quill-new/dist/quill.snow.css"; // ✅ correct import
 
 // const API_BASE = "https://bigwigdigitalbackend.onrender.com";
 
@@ -327,8 +327,8 @@ const AddBlog = ({
                   ? "Updating..."
                   : "Adding..."
                 : existingBlog
-                ? "Update"
-                : "Submit"}
+                  ? "Update"
+                  : "Submit"}
             </button>
           </div>
         </form>
