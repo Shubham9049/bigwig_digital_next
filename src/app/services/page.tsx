@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef, useState } from "react";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
@@ -18,7 +18,6 @@ import smo from "../../../Assets/services/SMO.png";
 import video from "../../../Assets/services/Video Shoots.png";
 import website from "../../../Assets/services/Website Development.png";
 import Image from "next/image";
-
 
 const services = [
   {
@@ -161,16 +160,16 @@ function Services() {
   return (
     <div className="min-h-screen bg-white text-black font-raleway">
       <Nav />
-        <title>Full Digital Marketing Services</title>
-        <meta
-          name="description"
-          content="Explore our full suite of digital marketing services customized for businesses of all sizes."
-        />
-        <link
-          rel="canonical"
-          href="https://www.bigwigmediadigital.com/services"
-        />
-    
+      <title>Full Digital Marketing Services</title>
+      <meta
+        name="description"
+        content="Explore our full suite of digital marketing services customized for businesses of all sizes."
+      />
+      <link
+        rel="canonical"
+        href="https://www.bigwigmediadigital.com/services"
+      />
+
       {/* Mobile View */}
       <div className="md:hidden px-4 py-8">
         <h2 className="text-3xl font-bold text-center mb-6">
@@ -198,7 +197,7 @@ function Services() {
             {services[selectedIndex].content}
           </p>
           <a href={services[selectedIndex].path}>
-            <button className="bg-[var(--primary-color)] text-white font-semibold px-4 py-2 rounded">
+            <button className="bg-[var(--primary-color)] text-white font-semibold px-4 py-2 rounded cursor-pointer">
               Explore
             </button>
           </a>
@@ -241,13 +240,12 @@ function Services() {
         <div className="w-3/4 space-y-16">
           {services.map((service, index) => (
             <div
-            key={index}
-            ref={(el) => {
+              key={index}
+              ref={(el) => {
                 serviceRefs.current[index] = el;
-            }}
-            className="bg-gray-100 p-8 rounded-xl shadow-md transition-all duration-300 scroll-mt-28"
+              }}
+              className="bg-gray-100 p-8 rounded-xl shadow-md transition-all duration-300 scroll-mt-28"
             >
-
               <div className="flex justify-between">
                 <div>
                   <h3 className="text-xl font-bold text-[var(--primary-color)] mb-2">
@@ -258,13 +256,17 @@ function Services() {
                   </h4>
                   <p className="text-gray-800 mb-4">{service.content}</p>
                   <a href={service.path}>
-                    <button className="bg-[var(--primary-color)] text-white font-semibold px-4 py-2 rounded">
+                    <button className="bg-[var(--primary-color)] text-white font-semibold px-4 py-2 rounded cursor-pointer">
                       Explore
                     </button>
                   </a>
                 </div>
                 <div>
-                  <Image src={service.image} alt={service.title} className="w-36" />
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    className="w-36"
+                  />
                 </div>
               </div>
             </div>
