@@ -4,6 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       "winprofx.com",
+      "riverfront.vercel.app",
+      "www.homesandlandgoa.com",
       "www.svgrepo.com",
       "res.cloudinary.com",
       "media.istockphoto.com",
@@ -49,6 +51,9 @@ const nextConfig: NextConfig = {
       "static.wikia.nocookie.net",
       "www.opju.ac.in",
       "bottindia.com",
+      "www.integratedlognet.com",
+      "www.stellarbinge.com",
+      "www.khalsapropertydealers.com",
     ],
   },
 };

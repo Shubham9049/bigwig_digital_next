@@ -7,24 +7,24 @@ import "aos/dist/aos.css";
 import { usePathname } from "next/navigation";
 
 const images = [
+  "https://www.khalsapropertydealers.com/assets/logo-DnYKs3z-.png",
+  "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_55KVEMQgqTHhJzShfN5EefE2pTXK",
+  "https://www.integratedlognet.com/assets/iln%20logo%20(1)-By-pImIc.png",
   "https://riverfront.vercel.app/assets/Logo%20for%20riverfront%20-CAIVvev0.png",
+  "https://www.homesandlandgoa.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.b166d281.png&w=640&q=75&dpl=dpl_CAHgoDqvf7txY4ReKMyGa6ZD9Ti4",
   "https://i1.sndcdn.com/avatars-zrGoOnkGJPMFqycp-NUkwhg-t1080x1080.jpg",
   "https://aylesforddubai.com/wp-content/uploads/2024/11/aylesford.svg",
   "https://www.shoutlo.com/assets/images/merchant_images/merchant-133212-5c65208474154.jpg",
   "https://upload.wikimedia.org/wikipedia/commons/3/3e/Park_Inn_by_Radisson_logo.png",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs8ZV5K7FxPkLchCy1bSLTfp6aqptcTl8vGg&s",
-  "https://searchlogovector.com/wp-content/uploads/2018/11/park-plaza-logo-vector.png",
   "https://companieslogo.com/img/orig/BIDU_BIG-fd4001c8.png?t=1720244491",
   "https://pngimg.com/d/skoda_PNG12322.png",
   "https://static.vecteezy.com/system/resources/previews/019/766/250/non_2x/bajaj-logo-bajaj-icon-transparent-free-png.png",
   "https://freelogopng.com/images/all_img/1680513237airtel-logo-png.png",
   "https://companieslogo.com/img/orig/DABUR.NS-f750fc64.png?t=1720244491",
-  "https://cdn.freebiesupply.com/logos/thumbs/2x/cnn-international-logo.png",
-  "https://upload.wikimedia.org/wikipedia/commons/c/c7/Ford-Motor-Company-Logo.png",
   "https://brandlogos.net/wp-content/uploads/2014/11/barclays-logo_brandlogos.net_2xdee-512x512.png",
   "https://images.seeklogo.com/logo-png/30/1/itz-cash-logo-png_seeklogo-305185.png",
   "https://www.cablewirefair.com/wp-content/uploads/2024/08/99-electrical-world.png",
-  "https://pngimg.com/d/bitcoin_PNG36.png",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/CARE_Logo_Orange.png/384px-CARE_Logo_Orange.png",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/GAIL.svg/2560px-GAIL.svg.png",
 ];

@@ -8,6 +8,11 @@ import Footer from "../../../components/Footer";
 import Image from "next/image";
 
 const images = [
+  "https://www.khalsapropertydealers.com/assets/logo-DnYKs3z-.png",
+  "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_55KVEMQgqTHhJzShfN5EefE2pTXK",
+  "https://www.integratedlognet.com/assets/ILN%20Logo%20v2-E6ypUoII.png",
+  "https://riverfront.vercel.app/assets/Logo%20for%20riverfront%20-CAIVvev0.png",
+  "https://www.homesandlandgoa.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.b166d281.png&w=640&q=75&dpl=dpl_CAHgoDqvf7txY4ReKMyGa6ZD9Ti4",
   "https://cdn.freebiesupply.com/logos/large/2x/jw-marriott-hotel-resorts-logo-png-transparent.png",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Choice_Hotels_logo.svg/2560px-Choice_Hotels_logo.svg.png",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Park_Plaza_logo.svg/2420px-Park_Plaza_logo.svg.png",
