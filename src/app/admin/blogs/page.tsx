@@ -1,6 +1,6 @@
 "use client";
 import { Code, Edit, ImageIcon, Trash2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useMemo, useEffect, useState } from "react";
 import AddBlog from "../../../../components/AddBlogs";
 import { formatHtml } from "../../../../utils/formatHtml";
 import Fuse from "fuse.js";
@@ -123,16 +123,19 @@ const AdminBlog = () => {
     setEditingBlog(null);
   };
 
-  const fuse = new Fuse(blogs, {
-    keys: ["title", "category", "author"],
-    threshold: 0.3,
-    ignoreLocation: true,
-  });
+  // initialize fuse only on client
+  const fuse = useMemo(() => {
+    if (!isClient) return null;
+    return new Fuse(blogs, {
+      keys: ["title", "category", "author"],
+      threshold: 0.3,
+    });
+  }, [blogs, isClient]);
 
   const filteredBlogs =
-    searchQuery.trim() === ""
+    !isClient || !fuse || searchQuery.trim() === ""
       ? blogs
-      : fuse.search(searchQuery).map((result) => result.item);
+      : fuse.search(searchQuery).map((res) => res.item);
 
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
   const paginatedBlogs = filteredBlogs.slice(
