@@ -51,6 +51,7 @@ const nextConfig: NextConfig = {
       "www.integratedlognet.com",
       "www.stellarbinge.com",
       "www.khalsapropertydealers.com",
+      "media.istockphoto.com",
     ],
   },
 };
