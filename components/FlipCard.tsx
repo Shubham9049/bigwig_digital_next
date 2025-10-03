@@ -15,7 +15,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 const FlipCard = () => {
@@ -168,10 +167,12 @@ const FlipCard = () => {
                   {cards[mobileIndex].icon}
                 </div>
                 <div className="absolute top-6 right-4">
-                  <img
+                  <Image
                     src="https://cdn.prod.website-files.com/66bbc417df501b935e5152c6/66cdb85d740ac1a54de3fdc1_icon-grid.svg"
                     alt="icon"
                     className="w-8 invert"
+                    width={10}
+                    height={10}
                   />
                 </div>
                 <div className="p-4 h-1/2 flex flex-col mt-20">
@@ -205,16 +206,18 @@ const FlipCard = () => {
               <div
                 className={`absolute w-full h-full backface-hidden rotate-y-180 rounded-lg flex flex-col items-center justify-center p-6 ${cards[mobileIndex].bgColor}`}
               >
-                <Link href="contact">
+                <a href="contact">
                   <div className="border-2 border-black absolute top-6 left-4 bg-white px-6 py-3 rounded-full text-sm font-semibold">
                     Contact
                   </div>
-                </Link>
+                </a>
                 <div className="absolute top-6 right-4">
-                  <img
+                  <Image
                     src="https://cdn.prod.website-files.com/66bbc417df501b935e5152c6/66cdb85d740ac1a54de3fdc1_icon-grid.svg"
                     alt="icon"
                     className="w-8 invert"
+                    width={10}
+                    height={10}
                   />
                 </div>
                 <p className="text-justify text-sm text-white">
@@ -268,10 +271,12 @@ const FlipCard = () => {
               >
                 <div className="absolute top-6 left-4">{card.icon}</div>
                 <div className="absolute top-6 right-4">
-                  <img
+                  <Image
                     src="https://cdn.prod.website-files.com/66bbc417df501b935e5152c6/66cdb85d740ac1a54de3fdc1_icon-grid.svg"
                     alt="icon"
                     className="w-8 invert"
+                    width={10}
+                    height={10}
                   />
                 </div>
                 <div className="p-4 h-1/2 flex flex-col mt-20">
@@ -303,42 +308,30 @@ const FlipCard = () => {
 
               {/* Back */}
               <div
-                className={`absolute w-full h-full rounded-lg flex flex-col items-center justify-center p-6 ${card.bgColor}`}
-                style={{
-                  backfaceVisibility: "hidden",
-                  transform: flippedStates[index]
-                    ? "rotateY(0deg)"
-                    : "rotateY(180deg)",
-                  transition: "transform 0.5s",
-                }}
+                className={`absolute w-full h-full backface-hidden rotate-y-180 rounded-lg flex flex-col items-center justify-center p-6 ${card.bgColor}`}
               >
-                {/* Contact Button */}
-                <Link href="contact">
+                <a href="contact">
                   <div className="border-2 border-black absolute top-6 left-4 bg-white px-6 py-3 rounded-full text-sm font-semibold">
                     Contact
                   </div>
-                </Link>
-
-                {/* Top Right Icon */}
+                </a>
                 <div className="absolute top-6 right-4">
-                  <img
+                  <Image
                     src="https://cdn.prod.website-files.com/66bbc417df501b935e5152c6/66cdb85d740ac1a54de3fdc1_icon-grid.svg"
                     alt="icon"
                     className="w-8 invert"
+                    width={10}
+                    height={10}
                   />
                 </div>
-
-                {/* Description */}
-                <p className="text-justify text-md text-white mt-10">
+                <p className="text-justify text-md text-white">
                   {card.description}
                 </p>
-
-                {/* Flip Button */}
                 <button
                   onClick={() => handleFlip(index)}
                   className="px-4 py-3 border-2 border-r-4 border-black absolute bottom-4 right-4 bg-white rounded-full shadow-md hover:bg-gray-100 transition font-bold text-2xl"
                 >
-                  —{/* optional arrow icon if you want */}
+                  —
                 </button>
               </div>
             </div>
