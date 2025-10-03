@@ -178,7 +178,7 @@ const Nav: React.FC = () => {
               return (
                 <li key={section}>
                   <Link href={path}>
-                    <button className="relative overflow-hidden group rounded-lg px-3 py-2 hover:text-white transition-colors duration-300">
+                    <button className="relative cursor-pointer overflow-hidden group rounded-lg px-3 py-2 hover:text-white transition-colors duration-300">
                       <span className="relative z-10 capitalize">
                         {section}
                       </span>

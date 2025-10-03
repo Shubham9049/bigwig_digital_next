@@ -43,6 +43,12 @@ const nextConfig: NextConfig = {
       "www.iipm.edu",
       "innovation.opju.ac.in",
       "shooliniuniversity.com",
+      "www.parkplazaamsterdamairport.com",
+      "logoeps.com",
+      "www.freelogovectors.net",
+      "static.wikia.nocookie.net",
+      "www.opju.ac.in",
+      "bottindia.com",
     ],
   },
 };
