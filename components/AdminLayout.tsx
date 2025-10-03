@@ -39,7 +39,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
     <div className="h-screen flex flex-col lg:flex-row overflow-hidden bg-black text-white font-raleway relative">
       {/* Mobile Top Nav */}
       <div className="lg:hidden bg-[#111] flex items-center justify-between px-4 py-3 shadow-md">
-        <Link href="/adminDashboard">
+        <Link href="/">
           <Image src={logo} alt="logo" className="h-10 w-auto" />
         </Link>
         <button
@@ -83,7 +83,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
 
       {/* Sidebar */}
       <aside className="hidden lg:flex lg:flex-col w-64 bg-[#111] shadow-md p-4 space-y-4 fixed h-full">
-        <Link href="/adminDashboard">
+        <Link href="/">
           <Image src={logo} alt="logo" className="h-20 w-auto mx-auto mb-2" />
         </Link>
         <nav className="flex flex-col gap-2 text-sm overflow-y-auto">
