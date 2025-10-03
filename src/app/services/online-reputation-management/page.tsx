@@ -129,9 +129,9 @@ function OnlineReputationManagement() {
                 Online Reputation Management That Protects What Matters
               </h2>
               <p className="text-lg leading-relaxed">
-                Your brand's most significant asset in this digital age is its
-                online reputation. One negative review or outdated article can
-                cost you trust, traffic, and conversions. At{" "}
+                Your brand&#39;s most significant asset in this digital age is
+                its online reputation. One negative review or outdated article
+                can cost you trust, traffic, and conversions. At{" "}
                 <strong>
                   <a href="https://www.bigwigmediadigital.com/">
                     BigWig Digital
@@ -168,16 +168,16 @@ function OnlineReputationManagement() {
             </h4>
             <p className="mb-4 leading-relaxed">
               Every click, comment, or complaint can impact your credibility.
-              Whether it's a negative customer review, outdated press coverage,
-              or a competitor's smear campaign, online reputation issues can
-              arise quickly and spread even faster.
+              Whether it&#39;s a negative customer review, outdated press
+              coverage, or a competitor&#39;s smear campaign, online reputation
+              issues can arise quickly and spread even faster.
             </p>
             <p className="leading-relaxed">
-              Effective ORM is not just about fixing what's broken. It's about
-              building a trustworthy digital profile that reflects your true
-              value. BigWig Digital helps you take charge of your reputation
-              with proactive strategies that protect your name and restore
-              confidence among your customers, partners, and investors.
+              Effective ORM is not just about fixing what&#39;s broken. It&#39;s
+              about building a trustworthy digital profile that reflects your
+              true value. BigWig Digital helps you take charge of your
+              reputation with proactive strategies that protect your name and
+              restore confidence among your customers, partners, and investors.
             </p>
           </div>
         </div>
@@ -267,8 +267,8 @@ function OnlineReputationManagement() {
                 Online reputation management is not just about damage control.
                 It plays a key role in long-term business development. A strong
                 digital presence builds the kind of trust that attracts
-                investors, partners, and top talent. Whether you're applying for
-                a government tender, pitching to clients, or entering new
+                investors, partners, and top talent. Whether you&#39;re applying
+                for a government tender, pitching to clients, or entering new
                 markets, your online image can influence major decisions. At{" "}
                 <strong>
                   <a href="https://www.bigwigdigital.in/">BigWig Digital</a>
