@@ -18,7 +18,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { icon: <Gauge />, label: "Dashboard", to: "/adminDashboard" },
+    { icon: <Gauge />, label: "Dashboard", to: "/admin" },
     { icon: <NotebookPen />, label: "Blogs", to: "/admin/blogs" },
     { icon: <User />, label: "Leads", to: "/admin/leads" },
     {
