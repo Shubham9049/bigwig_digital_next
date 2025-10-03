@@ -2,8 +2,8 @@
 import ContactForm from "../../../components/ContactForm";
 import Footer from "../../../components/Footer";
 import Nav from "../../../components/Nav";
-import bannerImage from "../../../assets/dubai.jpg";
-import transfrom from "../../../assets/Dubai/transformBuisness.jpg";
+import bannerImage from "../../../Assets/dubai.jpg";
+import transfrom from "../../../Assets/Dubai/transformBuisness.jpg";
 // import {
 //   Search,
 //   Share2,
