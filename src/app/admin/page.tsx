@@ -22,6 +22,10 @@ interface LeadStat {
   date: string;
   count: number;
 }
+interface GARow {
+  dimensionValues: { value: string }[];
+  metricValues: { value: string }[];
+}
 
 interface GAStat {
   city: string;
@@ -81,20 +85,20 @@ const Dashboard = () => {
           }
 
           if (Array.isArray(gaStats?.rows)) {
-            const formatted: GAStat[] = gaStats.rows.map((row: any) => ({
-              city: row.dimensionValues[0].value,
-              activeUsers: parseInt(row.metricValues[0].value),
+            const formatted: GAStat[] = gaStats.rows.map((row: GARow) => ({
+              city: row.dimensionValues[0]?.value || "Unknown",
+              activeUsers: parseInt(row.metricValues[0]?.value || "0", 10),
             }));
             setGaGraphData(formatted);
           }
 
           if (Array.isArray(summaryStats?.rows)) {
             const formattedSources: TrafficSource[] = summaryStats.rows.map(
-              (row: any) => ({
-                source: row.dimensionValues[0].value,
-                totalUsers: parseInt(row.metricValues[0].value),
-                sessions: parseInt(row.metricValues[1].value),
-                activeUsers: parseInt(row.metricValues[2].value),
+              (row: GARow) => ({
+                source: row.dimensionValues[0]?.value || "Unknown",
+                totalUsers: parseInt(row.metricValues[0]?.value || "0", 10),
+                sessions: parseInt(row.metricValues[1]?.value || "0", 10),
+                activeUsers: parseInt(row.metricValues[2]?.value || "0", 10),
               })
             );
             setTrafficSources(formattedSources);

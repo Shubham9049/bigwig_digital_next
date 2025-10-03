@@ -12,9 +12,19 @@ const initialForm = {
   jobType: "Full-time",
   workMode: "Office",
 };
+interface Job {
+  _id: string;
+  title: string;
+  location: string;
+  jd: string;
+  responsibilities: string[];
+  requirements: string[];
+  jobType: string;
+  workMode: string;
+}
 
 const AddJobs = () => {
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [form, setForm] = useState(initialForm);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -30,7 +40,11 @@ const AddJobs = () => {
     fetchJobs();
   }, []);
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
 
     if (name === "responsibilities" || name === "requirements") {
@@ -102,7 +116,7 @@ const AddJobs = () => {
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {jobs.map((job: any) => (
+          {jobs.map((job: Job) => (
             <div
               key={job._id}
               className="bg-gray-800 p-6 rounded-lg shadow-md relative group"
