@@ -95,12 +95,42 @@ const images = [
 ];
 
 const stylePairs = [
-  { bg: "bg-red-100", border: "border-red-500" },
-  { bg: "bg-green-100", border: "border-green-500" },
-  { bg: "bg-blue-100", border: "border-blue-500" },
-  { bg: "bg-yellow-100", border: "border-yellow-500" },
-  { bg: "bg-purple-100", border: "border-purple-500" },
-  { bg: "bg-pink-100", border: "border-pink-500" },
+  {
+    bg: "bg-red-100",
+    border: "border-red-500",
+    hoverBg: "group-hover:bg-red-100",
+    hoverBorder: "group-hover:border-red-500",
+  },
+  {
+    bg: "bg-green-100",
+    border: "border-green-500",
+    hoverBg: "group-hover:bg-green-100",
+    hoverBorder: "group-hover:border-green-500",
+  },
+  {
+    bg: "bg-blue-100",
+    border: "border-blue-500",
+    hoverBg: "group-hover:bg-blue-100",
+    hoverBorder: "group-hover:border-blue-500",
+  },
+  {
+    bg: "bg-yellow-100",
+    border: "border-yellow-500",
+    hoverBg: "group-hover:bg-yellow-100",
+    hoverBorder: "group-hover:border-yellow-500",
+  },
+  {
+    bg: "bg-purple-100",
+    border: "border-purple-500",
+    hoverBg: "group-hover:bg-purple-100",
+    hoverBorder: "group-hover:border-purple-500",
+  },
+  {
+    bg: "bg-pink-100",
+    border: "border-pink-500",
+    hoverBg: "group-hover:bg-pink-100",
+    hoverBorder: "group-hover:border-pink-500",
+  },
 ];
 
 function Clients() {
@@ -129,36 +159,27 @@ function Clients() {
       <div className="px-4 py-8 max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
           {images.map((img, index) => {
-            const { bg, border } = stylePairs[index % stylePairs.length];
+            const { hoverBg, hoverBorder } =
+              stylePairs[index % stylePairs.length];
             return (
               <div
-                key={index}
-                className="flip-card aspect-square w-full"
+                className="group aspect-square w-full"
                 data-aos="zoom-in"
+                key={index}
               >
-                <div className="flip-inner w-full h-full">
-                  <div
-                    className={`flip-front ${bg} ${border} border-8 rounded-sm flex items-center justify-center w-full h-full`}
-                  >
-                    <Image
-                      src={img}
-                      alt={`Client ${index + 1}`}
-                      className="w-4/5 object-contain"
-                      width={200}
-                      height={200}
-                    />
-                  </div>
-                  <div
-                    className={`flip-back bg-white ${border} border-8 rounded-sm flex items-center justify-center w-full h-full`}
-                  >
-                    <Image
-                      src={img}
-                      alt={`Client ${index + 1}`}
-                      className="w-4/5 object-contain"
-                      width={200}
-                      height={200}
-                    />
-                  </div>
+                <div
+                  className={`bg-gray-200 border-gray-300 border-8 rounded-sm 
+          flex items-center justify-center w-full h-full 
+          transition duration-300 
+          ${hoverBg} ${hoverBorder}`}
+                >
+                  <Image
+                    src={img}
+                    alt={`Client ${index + 1}`}
+                    className="w-4/5 object-contain grayscale group-hover:grayscale-0 transition duration-300"
+                    width={200}
+                    height={200}
+                  />
                 </div>
               </div>
             );
