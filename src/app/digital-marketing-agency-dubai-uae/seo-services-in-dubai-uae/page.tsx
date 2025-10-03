@@ -1,9 +1,9 @@
 "use client";
 import Nav from "../../../../components/Nav";
 import ContactForm from "../../../../components/ContactForm";
-import bannerImage from "../../../../assets/dubai.jpg";
+import bannerImage from "../../../../Assets/dubai.jpg";
 import Footer from "../../../../components/Footer";
-import seoImage from "../../../../assets/Dubai/transformBuisness.jpg";
+import seoImage from "../../../../Assets/Dubai/transformBuisness.jpg";
 import { BarChart3, CheckCircle2, Globe } from "lucide-react";
 import OurProcess from "../../../../components/OurProcess";
 import WhyBigwig from "../../../../components/WhyBigwig";
