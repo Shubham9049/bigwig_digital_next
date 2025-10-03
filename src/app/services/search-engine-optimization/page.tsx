@@ -186,8 +186,8 @@ function Seo() {
             <div className="space-y-6">
               <p className="text-gray-700  text-lg leading-relaxed">
                 Many people mistakenly believe that SEO is merely a business
-                etiquette. The process of increasing a website's or online
-                content's visibility in search engine results pages (SERPs),
+                etiquette. The process of increasing a website&#39;s or online
+                content&#39;s visibility in search engine results pages (SERPs),
                 mostly on sites like Google, Yahoo, and Bing, is known as search
                 engine optimization. Thus, the likelihood of showing up in
                 search queries increases with visibility. Usually, an SEO
@@ -285,7 +285,7 @@ function Seo() {
               {
                 title: "App Store Optimization (ASO)",
                 points: [
-                  `We raise your app's visibility and ranking on the Apple App Store and Google Play.`,
+                  `We raise your app&#39;s visibility and ranking on the Apple App Store and Google Play.`,
                   `The purpose of our content and creatives is to increase engagement and app downloads.`,
                   `Utilizing competitive insights and keyword research, we improve discoverability.`,
                   `We help you get good app reviews so you may succeed in the long run.`,
@@ -295,11 +295,11 @@ function Seo() {
               {
                 title: "Answer Engine Optimization (AEO)",
                 points: [
-                  `We arrange your material such that it shows up in Google's "People Also Ask" and featured snippets.`,
+                  `We arrange your material such that it shows up in Google&#39;s "People Also Ask" and featured snippets.`,
                   `Your chances of ranking as the top response to voice search inquiries are increased by our optimization strategies.`,
                   `We produce organized, conversational material that corresponds with the way people pose inquiries.`,
                   `Our use of schema markup improves the search engine visibility of your material.`,
-                  `With our AEO strategy, you'll gain more credibility and click-throughs.`,
+                  `With our AEO strategy, you&#39;ll gain more credibility and click-throughs.`,
                 ],
               },
               {
@@ -316,7 +316,7 @@ function Seo() {
                 title: "E-commerce SEO",
                 points: [
                   `We enhance your store to increase organic sales and product visibility.`,
-                  `Your product's rankings on Google and other search engines are raised by our tactics.`,
+                  `Your product&#39;s rankings on Google and other search engines are raised by our tactics.`,
                   `For higher conversion rates, we improve user experience and address technical problems.`,
                   `We write product descriptions and URLs that are optimized for search engines to draw in customers.`,
                   `You can achieve long-term success with our e-commerce SEO without depending too much on advertisements.`,
@@ -325,7 +325,7 @@ function Seo() {
               {
                 title: "International SEO",
                 points: [
-                  `We increase your website's visibility across the globe by helping it rank in several languages and countries.`,
+                  `We increase your website&#39;s visibility across the globe by helping it rank in several languages and countries.`,
                   `To prevent content misunderstanding, our team uses geo-targeting and hreflang tags.`,
                   `For every target market and culture, we localize your approach and content.`,
                   `Baidu, Yandex, and Bing are some of the regional search engines that we optimize for.`,
