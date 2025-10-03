@@ -31,6 +31,8 @@ const AdminBlog = () => {
   const [editingSlug, setEditingSlug] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isClient, setIsClient] = useState(false);
+
   const itemsPerPage = 15;
 
   const fetchBlogs = async () => {
@@ -48,6 +50,10 @@ const AdminBlog = () => {
 
   useEffect(() => {
     fetchBlogs();
+  }, []);
+
+  useEffect(() => {
+    setIsClient(true);
   }, []);
 
   const handleDelete = async (slug: string) => {
@@ -208,11 +214,16 @@ const AdminBlog = () => {
                       {blog.category}
                     </td>
                     <td className="px-2 py-2 text-white">
-                      <div
-                        className="max-h-[100px] overflow-hidden text-ellipsis relative"
-                        dangerouslySetInnerHTML={{ __html: blog.content }}
-                      />
+                      {isClient ? (
+                        <div
+                          className="max-h-[100px] overflow-hidden text-ellipsis relative"
+                          dangerouslySetInnerHTML={{ __html: blog.content }}
+                        />
+                      ) : (
+                        <p>Loading...</p>
+                      )}
                     </td>
+
                     <td className="px-2 py-2 truncate whitespace-nowrap">
                       {blog.author}
                     </td>
